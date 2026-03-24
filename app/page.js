@@ -512,7 +512,7 @@ export default function HomePage() {
             <a href="mailto:contact@example.com" className="pf-btn-primary">
               EMAIL ME
             </a>
-            <a href="https://linkedin.com/in/larneljhight" target="_blank" rel="noopener noreferrer" className="pf-btn-secondary">
+            <a href="https://linkedin.com/in/larnelhight" target="_blank" rel="noopener noreferrer" className="pf-btn-secondary">
               LINKEDIN
             </a>
           </div>

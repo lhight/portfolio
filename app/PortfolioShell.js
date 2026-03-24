@@ -138,7 +138,7 @@ export default function PortfolioShell({ children }) {
               </svg>
             )}
           </button>
-          <a href="https://linkedin.com/in/larneljhight" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/larnelhight" target="_blank" rel="noopener noreferrer">
             LI
           </a>
           <a href="mailto:contact@example.com">
