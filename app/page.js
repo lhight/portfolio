@@ -1,6 +1,7 @@
 'use client';
 
 import PortfolioShell from './PortfolioShell';
+import Link from 'next/link';
 
 const marqueeWords = [
   'CISSP', 'AI GOVERNANCE', 'ENTERPRISE ARCHITECTURE', 'TECHNOLOGY RISK',
@@ -94,6 +95,7 @@ const writing = [
     title: 'Building an Enterprise AI Governance Board from Zero',
     desc: 'No precedent. No playbook. Fast-moving technology. Diverse stakeholders. Here is how we built a governance structure that actually works.',
     date: 'JAN 2026',
+    href: '/case-studies/ai-governance-board',
   },
   {
     type: 'OPINION',
@@ -429,50 +431,63 @@ export default function HomePage() {
           </h2>
 
           <div>
-            {writing.map((w, i) => (
-              <div key={i} className="pf-writing-item">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 2,
-                    textTransform: 'uppercase',
-                    color: 'var(--accent-primary)',
-                    opacity: 0.8,
+            {writing.map((w, i) => {
+              const content = (
+                <div key={i} className="pf-writing-item">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 9,
+                      letterSpacing: 2,
+                      textTransform: 'uppercase',
+                      color: 'var(--accent-primary)',
+                      opacity: 0.8,
+                    }}>
+                      {w.type}
+                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <span style={{
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: 9,
+                        letterSpacing: 1.5,
+                        color: 'var(--text-muted)',
+                      }}>
+                        {w.date}
+                      </span>
+                      {w.href && (
+                        <span className="pf-writing-arrow" style={{ fontSize: 14 }}>→</span>
+                      )}
+                    </div>
+                  </div>
+                  <h3 style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 18,
+                    lineHeight: 1.3,
+                    color: 'var(--text-primary)',
+                    marginTop: 8,
+                    transition: 'color 0.2s',
                   }}>
-                    {w.type}
-                  </span>
-                  <span style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    color: 'var(--text-muted)',
+                    {w.title}
+                  </h3>
+                  <p style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 300,
+                    fontSize: 14,
+                    lineHeight: 1.7,
+                    color: 'var(--text-secondary)',
+                    marginTop: 8,
                   }}>
-                    {w.date}
-                  </span>
+                    {w.desc}
+                  </p>
                 </div>
-                <h3 style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 700,
-                  fontSize: 18,
-                  lineHeight: 1.3,
-                  color: 'var(--text-primary)',
-                  marginTop: 8,
-                }}>
-                  {w.title}
-                </h3>
-                <p style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 300,
-                  fontSize: 14,
-                  lineHeight: 1.7,
-                  color: 'var(--text-secondary)',
-                  marginTop: 8,
-                }}>
-                  {w.desc}
-                </p>
-              </div>
-            ))}
+              );
+              return w.href ? (
+                <Link key={i} href={w.href} className="pf-writing-link">{content}</Link>
+              ) : (
+                content
+              );
+            })}
           </div>
         </section>
 
