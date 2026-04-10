@@ -70,6 +70,12 @@ const ventures = [
     status: 'active',
   },
   {
+    title: 'Agentic AI Operations Platform',
+    role: 'Architect',
+    desc: 'Autonomous operations architecture built on agentic AI principles. Tiered model routing, cost optimization, and multi-workflow orchestration — a working system, not a concept.',
+    status: 'active',
+  },
+  {
     title: 'Technology Risk Advisory',
     role: 'Independent Consultant',
     desc: 'Helping organizations navigate cloud migration, resilience improvements, and infrastructure modernization. Structured program management with phased execution.',
@@ -580,7 +586,7 @@ export default function HomePage() {
                   lineHeight: 1.7,
                   color: 'var(--text-secondary)',
                 }}>
-                  Open to Principal / Director-level roles. Advisory. Consulting. Remote-first.
+                  Open to Senior Manager / Principal IC roles at the intersection of AI security, governance, and cloud architecture. Remote-first.
                 </p>
               </div>
               <div>
